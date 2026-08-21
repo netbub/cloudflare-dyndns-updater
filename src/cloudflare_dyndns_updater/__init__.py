@@ -19,7 +19,6 @@ def updater(args: argparse.Namespace) -> None:
     else:
         client = Cloudflare(api_token=os.environ.get("CLOUDFLARE_API_TOKEN"))
     zone = ".".join(args.domain.split(".")[1:])
-    print(client)
     zone_id = client.zones.list(name=zone).result[0].id
     records = client.dns.records.list(zone_id=zone_id).result
     record_id = ""
