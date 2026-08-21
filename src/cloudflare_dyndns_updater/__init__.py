@@ -14,7 +14,7 @@ def updater(args: argparse.Namespace) -> None:
             for line in fp:
                 k = line.split("=")[0]
                 v = line.split("=")[1]
-                envVars[k] = v.strip('"')
+                envVars[k] = v.strip('"').strip()
         client = Cloudflare(api_token=envVars["CLOUDFLARE_API_TOKEN"])  # type: ignore
     else:
         client = Cloudflare(api_token=os.environ.get("CLOUDFLARE_API_TOKEN"))
