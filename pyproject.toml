@@ -7,7 +7,9 @@ authors = [
     { name = "netbub", email = "netbub1234@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "cloudflare>=5.6.0",
+]
 
 [project.scripts]
 cloudflare-dyndns-updater = "cloudflare_dyndns_updater:main"
